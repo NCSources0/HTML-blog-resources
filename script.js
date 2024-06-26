@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     background-color: #222;
     transition: all 100ms;
     position: absolute;
-    left: calc(100% - 36px)
+    left: calc(100% - 44px);
     font-size: 20px;
     float: right;
     padding: 4px;
