@@ -9,13 +9,13 @@ somewhere inside of each HTML file.
 Create ```<div id="code">Code here</div>``` for a fenced code block, ```<span id="code">Code here</span>``` for a normal one.  
 Fenced code blocks have a copy button, normal ones don't.
 
-To make a copy button use ```mkCopyBtn(type, element);```; See [here](#mkcopybtntype-element).
+To add a copy button use ```addCopyBtn(type, element);```; See [here](#addcopybtntype-element).
 
 To copy something use ```copy(type, text);```; See [here](#copytype-text).
 
 # Explainations
 
-## mkCopyBtn(type, element);
+## addCopyBtn(type, element);
 
 ### Description
 
