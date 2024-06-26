@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		overflow-wrap: break-word;
 	}
 
-	div#code a {
+	a#copy {
 		float: right;
 		background-color: #444;
+    padding: 4px;
+    border-radius: 4px;
 	}
 
 	a {
@@ -37,8 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		border-radius: 8px;
 	}
 
-	span#code,
-	div#code a {
+	span#code {
 		min-height: 0;
 		padding: 1px 2px;
 		border-radius: 4px;
