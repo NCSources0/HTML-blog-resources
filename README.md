@@ -2,7 +2,7 @@
 
 Copy & paste
 ``` js
-<script src="https://raw.githubusercontent.com/NCResources/HTML-blog-resources/main/script.js"></script>
+<script src="https://ncresources.github.io/HTML-blog-resources/script.js"></script>
 ```
 somewhere inside of each HTML file.
 
