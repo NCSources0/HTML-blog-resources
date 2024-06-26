@@ -1,49 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
   document.head.innerHTML += `
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 
-	body,
-	pre {
-		font-weight: bold;
-		font-family: 'Roboto';
-		background-color: #000;
-		color: #fff;
-		flex-wrap: wrap;
-		text-wrap: wrap;
-		word-wrap: break-word;
-		overflow-wrap: break-word;
-	}
+  .material-symbols-outlined {
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24
+  }
 
-	a#copy {
-		float: right;
-		background-color: #444;
+  body,
+  pre {
+    font-weight: bold;
+    font-family: 'Roboto';
+    background-color: #000;
+    color: #fff;
+    flex-wrap: wrap;
+    text-wrap: wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  a#copy {
+    height: 20px;
+    width: 20px;
+    background-color: #222;
+    transition: all 100ms;
+    float: right;
     padding: 4px;
     border-radius: 4px;
-	}
+    font-size: 20px;
+  }
 
-	a {
-		color: #fff;
-		cursor: pointer;
-	}
+  a#copy:hover {
+    background-color: #444;
+  }
 
-	a:hover {
-		text-shadow: 0 0 10px #fff;
-	}
+  a {
+    color: #fff;
+    cursor: pointer;
+  }
 
-	#code {
-		min-height: 28px;
-		font-family: 'Source Code Pro';
-		background-color: #222;
-		padding: 8px;
-		border-radius: 8px;
-	}
+  a:hover {
+    text-shadow: 0 0 10px #fff;
+  }
 
-	span#code {
-		min-height: 0;
-		padding: 1px 2px;
-		border-radius: 4px;
-	}
+  #code {
+    min-height: 28px;
+    font-family: 'Source Code Pro';
+    background-color: #222;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  span#code {
+    min-height: 0;
+    padding: 1px 2px;
+    border-radius: 4px;
+  }
 </style>`;
 
   const bodyHTML = document.body.innerHTML;
@@ -57,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function addCopyBtn(type, element) {
   const ogText = element.textContent;
   const ogHTML = element.innerHTML;
-  element.innerHTML = `<a id="copy"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" fill="#fff"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg></a>${ogHTML}`;
+  element.innerHTML = `<a id="copy" class="material-symbols-outlined"></a>${ogHTML}&Tab;`;
   element.querySelector("a#copy").addEventListener("click", function () {
     copy("Code", ogText);
   });
