@@ -1,6 +1,10 @@
 # To use:
 
-Copy ```<script src="https://ncresources.github.io/HTML-blog-resources/script.js"></script>``` & paste it somewhere inside of each HTML file.
+Copy & paste
+``` js
+<script src="https://raw.githubusercontent.com/NCResources/HTML-blog-resources/main/script.js"></script>
+```
+somewhere inside of each HTML file.
 
 Create ```<div id="code">Code here</div>``` for a fenced code block, ```<span id="code">Code here</span>``` for a normal one.  
 Fenced code blocks have a copy button, normal ones don't.
