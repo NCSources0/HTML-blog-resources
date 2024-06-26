@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
     width: 20px;
     background-color: #222;
     transition: all 100ms;
+    position: absolute;
+    left: calc(100% - 36px)
+    font-size: 20px;
     float: right;
     padding: 4px;
     border-radius: 4px;
@@ -48,6 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   #code {
+    overflow-x: scroll;
+    text-wrap: nowrap;
+    word-wrap: normal;
     min-height: 28px;
     font-family: 'Source Code Pro';
     background-color: #222;
