@@ -1,17 +1,24 @@
 # To use:
 
-Copy & paste
+Copy & paste this somewhere inside of each HTML file:
 ``` html
 <script src="https://ncresources.github.io/HTML-blog-resources/script.js"></script>
 ```
-somewhere inside of each HTML file.
 
-Create ```<div id="code">Code here</div>``` for a fenced code block, ```<span id="code">Code here</span>``` for a normal one.  
+If you want the html to appear on the page like it does in the editor, put this in the ```<head>``` of your html:
+``` html
+<script>var pre=1;</script>
+```
+
+Create ```<div class="code">Code here</div>``` for a fenced code block, ```<span class="code">Code here</span>``` for a normal one.  
 Fenced code blocks have a copy button, normal ones don't.
+
 
 To add a copy button use ```addCopyBtn(type, element);```; See [here](#addcopybtntype-element).
 
 To copy something use ```copy(type, text);```; See [here](#copytype-text).
+
+To add a link to something on the page use ```addLink(to, element)``` See [here](#addlinkto-element)
 
 # Explainations
 
@@ -27,14 +34,14 @@ Any word you can think of that can describe the text that your button copies.
 
 ### "element"
 
-Use ```document.getElementById('id')``` or ```document.querySelector('.className or #id or element')``` example of ```document.querySelector('')```: 
+Use ```document.querySelector('.className or #id or element')``` example: 
 ``` js
 document.querySelector('element1#id1#id2.className1.className2 element2.className#id')
 ```
 That would be read as:
 ``` html
-<element1 id="id1 id2" class="className1 className2">
-  <element2 id="id" class="className">
+<element1 class="id1 id2" class="className1 className2">
+  <element2 class="id" class="className">
     The computer only sees what's in "element2"
   </element2>
 </element1>
@@ -53,3 +60,21 @@ Any word you can think of that can describe the text that is copied.
 ### "text"
 
 Text to be copied to the clipboard
+
+## addLink(to, element)
+<span style="color:red;">
+<h2>REMEMBER</h2>
+ANY element inside of "to" CANNOT have an "id" tag, use "class"
+</span>
+
+### Description
+
+Links one place in the page to another
+
+### "to"
+
+What element the link leads to; Can be ```document.querySelector('.className or element')```
+
+### "element"
+
+What element the link gets added to.
