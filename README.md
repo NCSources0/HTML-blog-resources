@@ -1,7 +1,7 @@
 # To use:
 
 Copy & paste
-``` js
+``` html
 <script src="https://ncresources.github.io/HTML-blog-resources/script.js"></script>
 ```
 somewhere inside of each HTML file.
