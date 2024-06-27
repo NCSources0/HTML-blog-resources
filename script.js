@@ -1,5 +1,5 @@
 var pre;
-var number;
+var number = 0;
 document.addEventListener("DOMContentLoaded", function () {
   //Add the styles to the beginning, so any styles that you add overwrite these
   headHTML = document.head.innerHTML;
@@ -130,7 +130,6 @@ function addCopyBtn(type, element) {
 }
 
 function addLink(to, element) {
-  if ((number = NaN || !number)) number = 0;
   number += 1;
   to.setAttribute("id", `${number}`);
 
