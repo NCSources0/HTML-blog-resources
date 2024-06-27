@@ -90,11 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 ${headHTML}`;
 
+  const bodyHTML = document.body.innerHTML;
   //Add a pre around the <body> element if you said to
-  if (pre) {
-    const bodyHTML = document.body.innerHTML;
-    document.body.innerHTML = `<pre>${bodyHTML}</pre>`;
-  }
+  if (pre) document.body.innerHTML = `<pre>${bodyHTML}</pre>`;
   if (
     !document.head.innerHTML.includes(
       "//github.com/NCResources/HTML-blog-resources"
@@ -102,10 +100,9 @@ ${headHTML}`;
     !document.body.innerHTML.includes(
       "//github.com/NCResources/HTML-blog-resources"
     )
-  ) {
+  )
     document.body.innerHTML +=
       "<div class='ncsCitation'>Thanks to NCSources for making \"<a href='http://github.com/NCResources/HTML-blog-resources' target='_blank'>HTML-blog-resources</a>\"</div>";
-  }
 
   //Add a copy button to every code div's inner html
   document.querySelectorAll("div.code").forEach((div) => {
@@ -133,6 +130,7 @@ function addCopyBtn(type, element) {
 }
 
 function addLink(to, element) {
+  if ((number = NaN || !number)) number = 0;
   number += 1;
   to.setAttribute("id", `${number}`);
 
