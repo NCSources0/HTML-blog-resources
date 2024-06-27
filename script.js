@@ -15,23 +15,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   .ncsCitation {
     position: fixed;
-    right: 8px;
-    bottom: 8px;
-    padding: 4px;
-    border-radius: 4px;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
     background-color: #000;
     color: #fff;
   }
 
-  body {
+  body, pre {
+    font-weight: bold;
     background-color: #000;
-  }
-
-  pre {
-	  font-family: "Roboto";
+    font-family: "Roboto";
     color: #fff;
     text-wrap: wrap;
     word-wrap: break-word;
+  }
+
+  a {
+    transition: all 100ms;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  a:hover {
+    text-shadow: 0 0 10px #fff;
   }
 
   a.copy {
@@ -52,18 +60,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   a.link {
-	  rotate: -45deg;
+    rotate: 0deg;
     text-decoration: none;
+    color: #0000;
   }
-
-  a {
-    transition: all 100ms;
+  
+  a.link:hover {
+		rotate: 45deg;
     color: #fff;
-    cursor: pointer;
-  }
-
-  a:hover {
-    text-shadow: 0 0 10px #fff;
   }
 
   .code {
@@ -90,7 +94,8 @@ ${headHTML}`;
     const bodyHTML = document.body.innerHTML;
     document.body.innerHTML = `<pre>${bodyHTML}</pre>`;
   }
-  document.body.innerHTML += "<div class='ncsCitation'>Dark style from <a href='http://github.com/NCResources/HTML-blog-resources'>NCSources' HTML-blog-resources</a></div>";
+  document.body.innerHTML +=
+    "<div class='ncsCitation'>Thanks to NCSources for making \"<a href='http://github.com/NCResources/HTML-blog-resources'>HTML-blog-resources</a></div>\"";
 
   //Add a copy button to every code div's inner html
   document.querySelectorAll("div.code").forEach((div) => {
