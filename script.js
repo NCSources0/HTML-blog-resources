@@ -95,7 +95,7 @@ ${headHTML}`;
 		document.body.innerHTML = `<pre>${bodyHTML}</pre>`;
 	}
 	document.body.innerHTML +=
-		"<div class='ncsCitation'>Thanks to NCSources for making <a href='http://github.com/NCResources/HTML-blog-resources'>HTML-blog-resources</a></div>";
+		"<div class='ncsCitation'>Thanks to NCSources for making \"<a href='http://github.com/NCResources/HTML-blog-resources'>HTML-blog-resources</a>\"</div>";
 
 	//Add a copy button to every code div's inner html
 	document.querySelectorAll("div.code").forEach((div) => {
