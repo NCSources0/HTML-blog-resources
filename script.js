@@ -1,4 +1,5 @@
 var pre;
+var number;
 document.addEventListener("DOMContentLoaded", function () {
   //Add the styles to the beginning, so any styles that you add overwrite these
   headHTML = document.head.innerHTML;
@@ -132,8 +133,9 @@ function addCopyBtn(type, element) {
 }
 
 function addLink(to, element) {
-  const number = Math.round(Math.random() * 1000);
+  number += 1;
   to.setAttribute("id", `${number}`);
+
   //Add a link to the element
   element.innerHTML += `<a class="link material-symbols-outlined" href="#${number}"></a>`;
 }
