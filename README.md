@@ -5,9 +5,9 @@ Copy & paste this somewhere inside of each HTML file:
 <script src="https://ncresources.github.io/HTML-blog-resources/script.js"></script>
 ```
 
-If you want the html to appear on the page like it does in the editor, put this in the ```<head>``` of your html:
+Or if you want the html to appear on the page like it does in the editor, put this inside your html:
 ``` html
-<script>var pre=1;</script>
+<script src="https://ncresources.github.io/HTML-blog-resources/script.js">var pre=1</script>
 ```
 
 Create ```<div class="code">Code here</div>``` for a fenced code block, ```<span class="code">Code here</span>``` for a normal one.  
