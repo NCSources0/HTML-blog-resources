@@ -10,15 +10,15 @@ Or if you want the html to appear on the page like it does in the editor, put th
 <script src="https://ncresources.github.io/HTML-blog-resources/script.js">var pre=1</script>
 ```
 
-Create ```<div class="code">Code here</div>``` for a fenced code block, ```<span class="code">Code here</span>``` for a normal one.  
+Create `<div class="code">Code here</div>` for a fenced code block, `<span class="code">Code here</span>` for a normal one.  
 Fenced code blocks have a copy button, normal ones don't.
 
 
-To add a copy button use ```addCopyBtn(type, element);```; See [here](#addcopybtntype-element).
+To add a copy button use `addCopyBtn(type, element);`; See [here](#addcopybtntype-element).
 
-To copy something use ```copy(type, text);```; See [here](#copytype-text).
+To copy something use `copy(type, text);`; See [here](#copytype-text).
 
-To add a link to something on the page use ```addLink(to, element)``` See [here](#addlinkto-element)
+To add a link to something on the page use `addLink(to, element)` See [here](#addlinkto-element)
 
 # Explainations
 
@@ -34,7 +34,7 @@ Any word you can think of that can describe the text that your button copies.
 
 ### "element"
 
-Use ```document.querySelector('.className or #id or element')``` example: 
+Use `document.querySelector('.className or #id or element')` example: 
 ``` js
 document.querySelector('element1#id1#id2.className1.className2 element2.className#id')
 ```
