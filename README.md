@@ -62,7 +62,7 @@ Any word you can think of that can describe the text that is copied.
 Text to be copied to the clipboard
 
 ## addLink(to, element)
-<h2 style="color:#f00;">REMEMBER</h2>
+### ⚠*REMEMBER*⚠
 ANY element inside of "to" CANNOT have an "id" tag, use "class"
 
 ### Description
