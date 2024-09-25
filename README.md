@@ -1,13 +1,13 @@
 # To use:
 
-Copy & paste this somewhere inside of each HTML file:
+Copy & paste this at the end of the body of each HTML file:
 ``` html
 <script src="https://ncsources0.github.io/HTML-blog-resources/script.js"></script>
 ```
 
-Or if you want the html to appear on the page like it does in the editor, put this inside your html:
+Or if you want the html to appear on the page like it does in the editor, put this inside the head your html:
 ``` html
-<script src="https://ncsources0.github.io/HTML-blog-resources/script.js">var pre=1</script>
+<script>var pre=1</script>
 ```
 
 Create `<div class="code">Code here</div>` for a fenced code block, `<span class="code">Code here</span>` for a normal one.  
