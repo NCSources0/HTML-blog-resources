@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bottom: 10px;
     padding: 5px;
     border-radius: 5px;
-    background-color: #000;
+    background-color: #111;
     color: #fff;
   }
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   a.copy {
     height: 20px;
     width: 20px;
-    background-color: #222;
+    background-color: #111;
     position: absolute;
     left: calc(100% - 44px);
     font-size: 20px;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   a.copy:hover {
-    background-color: #444;
+    background-color: #fff1;
   }
 
   a.link {
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     border-radius: 8px;
     min-height: 28px;
     font-family: 'Source Code Pro';
-    background-color: #222;
+    background-color: #111;
   }
 
   span.code {
@@ -87,8 +87,31 @@ document.addEventListener("DOMContentLoaded", function () {
     padding: 1px 2px;
     border-radius: 4px;
   }
-</style>
-${headHTML}`;
+  
+  div.uScript {
+    padding: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Source Code Pro';
+    height: 50px;
+    width: 150px;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  div.uScript img {
+    height: 50px;
+    float: left;
+    margin-right: 4px;
+  }
+
+  div.uScript span {
+    font-size: 19px;
+    font-family: 'Roboto';
+  }
+</style>${headHTML}`;
 
   const bodyHTML = document.body.innerHTML;
   //Add a pre around the <body> element if you said to
@@ -105,13 +128,18 @@ ${headHTML}`;
       "<div class='ncsCitation'>Thanks to NCSources for making \"<a href='http://github.com/NCResources/HTML-blog-resources' target='_blank'>HTML-blog-resources</a>\"</div>";
 
   //Add a copy button to every code div's inner html
-  document.querySelectorAll("div.code").forEach((div) => {
+  document.body.querySelectorAll("div.code").forEach((div) => {
     addCopyBtn("Code", div);
   });
 
   //Add a link to every h1, h2, h3, h4, h5, and h6
   document.querySelectorAll("h1", "h2", "h3", "h4", "h5", "h6").forEach((h) => {
     addLink(h, h);
+  });
+
+  //Add a link to every uScript
+  document.body.querySelectorAll("#uScript").forEach((e) => {
+    addUScript(e, e.getAttribute("data-link"));
   });
 });
 
@@ -125,7 +153,7 @@ function addCopyBtn(type, element) {
 
   //If a button is clicked, copy the text stored in ogText
   element.querySelector("a.copy").addEventListener("click", function () {
-    copy("Code", ogText);
+    copy(type, ogText);
   });
 }
 
@@ -147,4 +175,9 @@ function copy(type, text) {
     .catch((err) => {
       console.error("Could not copy text: ", err);
     });
+}
+
+function addUScript(e, link) {
+  //Add the uScript to the beginning of the element
+  e.outerHTML = `<div class="uScript"onclick="window.open('${link}')"><img src="https://www.tampermonkey.net/images/icon180.png">Download the <span>Userscript!</span></div>`;
 }
