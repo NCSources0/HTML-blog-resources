@@ -1,8 +1,7 @@
-var pre;
 var number = 0;
 document.addEventListener("DOMContentLoaded", function () {
   //Add the styles to the beginning, so any styles that you add overwrite these
-  headHTML = document.head.innerHTML;
+  const headHTML = document.head.innerHTML, bodyHTML = document.body.innerHTML;
   document.head.innerHTML = `<style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 
@@ -14,7 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
       "opsz" 24
   }
 
-  .ncsCitation {
+  * {
+    font-family: "Roboto";
+  }
+
+  ncsCitation {
     position: fixed;
     right: 10px;
     bottom: 10px;
@@ -22,15 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
     border-radius: 5px;
     background-color: #111;
     color: #fff;
+    margin-left:8px;
+    z-index: 9999;
   }
 
-  body, pre {
+  body {
     font-weight: bold;
     background-color: #000;
-    font-family: "Roboto";
     color: #fff;
-    text-wrap: wrap;
-    word-wrap: break-word;
   }
 
   a {
@@ -71,27 +73,32 @@ document.addEventListener("DOMContentLoaded", function () {
     color: #fff;
   }
 
-  .code {
+  codeBlock {
     overflow-x: scroll;
     text-wrap: nowrap;
     word-wrap: normal;
     padding: 8px;
     border-radius: 8px;
     min-height: 28px;
-    font-family: 'Source Code Pro';
     background-color: #111;
+    display: block;
+    font-family: 'Source Code Pro';
+    padding-right: 44px;
   }
 
-  span.code {
+  code {
+    font-family: 'Source Code Pro';
     min-height: 0;
-    padding: 1px 2px;
+    padding: 0px 3px;
     border-radius: 4px;
+    background-color: #111;
   }
   
-  div.uScript {
+  uscript {
     padding: 4px;
     border-radius: 4px;
     background-color: #fff;
+    display: block;
     color: #000;
     font-family: 'Source Code Pro';
     height: 50px;
@@ -101,34 +108,62 @@ document.addEventListener("DOMContentLoaded", function () {
     text-align: center;
   }
   
-  div.uScript img {
+  uscript .material-symbols-outlined {
     height: 50px;
+    width: 50px;
+    background-color: #000;
+    border-radius: 4px;
     float: left;
+    font-size: 50px;
+    color: #fff;
     margin-right: 4px;
   }
 
-  div.uScript span {
+  uscript .text {
     font-size: 19px;
-    font-family: 'Roboto';
+  }
+  
+  banner {
+    position: relative;
+    top: -8px;
+    left: -8px;
+  }
+
+  banner #img {
+    width: 100vw;
+    height: calc(100vh / 3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /*filter: brightness(0.5);*/
+    z-index: -1;
+  }
+
+  banner #text {
+    position: absolute;
+    top: -25vh;
+    left: -50vw;
+    width: 100vw;
+    height: 25vh;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    z-index: 0;
   }
 </style>${headHTML}`;
 
-  const bodyHTML = document.body.innerHTML;
-  //Add a pre around the <body> element if you said to
-  if (pre) document.body.innerHTML = `<pre>${bodyHTML}</pre>`;
   if (
-    !document.head.innerHTML.includes(
-      "//github.com/NCResources/HTML-blog-resources"
-    ) &&
     !document.body.innerHTML.includes(
       "//github.com/NCResources/HTML-blog-resources"
     )
   )
     document.body.innerHTML +=
-      "<div class='ncsCitation'>Thanks to NCSources for making \"<a href='http://github.com/NCResources/HTML-blog-resources' target='_blank'>HTML-blog-resources</a>\"</div>";
+      "<ncsCitation>Thanks to NCSources0 for making \"<a href='http://github.com/NCResources/HTML-blog-resources' target='_blank'>HTML-blog-resources</a>\"</ncsCitation>";
 
   //Add a copy button to every code div's inner html
-  document.body.querySelectorAll("div.code").forEach((div) => {
+  document.body.querySelectorAll("codeBlock").forEach((div) => {
     addCopyBtn("Code", div);
   });
 
@@ -138,9 +173,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //Add a link to every uScript
-  document.body.querySelectorAll("#uScript").forEach((e) => {
-    addUScript(e, e.getAttribute("data-link"));
+  document.body.querySelectorAll("uscript").forEach((e) => {
+    addUScript(e, e.getAttribute("link"));
   });
+
+  //Style the banner's image
+  document.querySelector("banner").innerHTML = `<div id="img" style="background-image:url(${document.querySelector("banner").getAttribute("img")})"></div><div id="text">${document.querySelector("banner").innerHTML}</div>`;
+
+  //Move the banner's image
+  setInterval(() => {
+    document.querySelector("banner").style.backgroundPosition = `0px ${window.scrollY / 2}px`
+  }, 0);
 });
 
 function addCopyBtn(type, element) {
@@ -179,5 +222,5 @@ function copy(type, text) {
 
 function addUScript(e, link) {
   //Add the uScript to the beginning of the element
-  e.outerHTML = `<div class="uScript"onclick="window.open('${link}')"><img src="https://www.tampermonkey.net/images/icon180.png">Download the <span>Userscript!</span></div>`;
+  e.outerHTML = `<uScript onclick="window.open('${link}')"><span class="material-symbols-outlined">code</span>Download the <span class="text">Userscript!</span></uscript>`;
 }
