@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24
+}
+
+* {
+  font-family: "Roboto";
+}
+
+body {
+  font-weight: bold;
+  background: #000;
+  color: #fff;
+}
+
+a {
+  transition: all 100ms;
+  color: #fff;
+  cursor: pointer;
+}
+
+a:hover {
+  text-shadow: 0 0 10px #fff;
+}
+
+a.copy {
+  height: 20px;
+  width: 20px;
+  background: #111;
+  position: absolute;
+  left: calc(100% - 44px);
+  font-size: 20px;
+  float: right;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+a.copy:hover {
+  background: #222;
+}
+
+a.link {
+  rotate: 0deg;
+  text-decoration: none;
+  color: #0000;
+}
+  
+a.link:hover {
+  rotate: 45deg;
+  color: #fff;
+}
+
+code#fenced {
+  overflow-x: scroll;
+  text-wrap: nowrap;
+  word-wrap: normal;
+  padding: 8px;
+  border-radius: 8px;
+  min-height: 28px;
+  background: #111;
+  display: block;
+  font-family: 'Source Code Pro';
+  padding-right: 44px;
+}
+
+code {
+  font-family: 'Source Code Pro';
+  min-height: 0;
+  padding: 0px 3px;
+  border-radius: 4px;
+  background: #111;
+}
+code pre {
+  margin: 0
+}
+
+uscript {
+  padding: 4px;
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+  color: #000;
+  font-family: 'Source Code Pro';
+  height: 50px;
+  width: 150px;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+}
+
+uscript .material-symbols-outlined {
+  height: 50px;
+  width: 50px;
+  background: #000;
+  border-radius: 4px;
+  float: left;
+  font-size: 50px;
+  color: #fff;
+  margin-right: 4px;
+}
+
+uscript .text {
+  font-size: 19px;
+}
+
+banner {
+  position: relative;
+  top: -8px;
+  left: -8px;
+  width: 100vw;
+  height: calc(100vh / 3);
+  display: inline-flex;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+}

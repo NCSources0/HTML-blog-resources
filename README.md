@@ -1,39 +1,29 @@
 # To use:
-
 Copy & paste this at the end of the body of each HTML file:
 ``` html
 <script src="https://ncsources0.github.io/HTML-blog-resources/script.js"></script>
 ```
 
-Or if you want the html to appear on the page like it does in the editor, put this inside the head your html:
-``` html
-<script>var pre=1</script>
-```
-
-Create `<div class="code">Code here</div>` for a fenced code block, `<span class="code">Code here</span>` for a normal one.  
-Fenced code blocks have a copy button, normal ones don't.
-
-
-To add a copy button use `addCopyBtn(type, element);`; See [here](#addcopybtntype-element).
-
-To copy something use `copy(type, text);`; See [here](#copytype-text).
-
-To add a link to something on the page use `addLink(to, element)` See [here](#addlinkto-element)
-
 # Explainations
+###### Advanced Explainations [below](#advanced-explainations)
+## \<code> \</code>
+Creates a codeblock, add the "fenced" id to make it a fenced codeblock, supports text inputs.
 
+## \<banner img=""> \</banner>
+Creates a banner image for your blog, supports text inputs.
+
+## \<uscript href=""/>
+Creates a userscript download button, doesn't support text inputs.
+
+# Advanced Explainations
 ## addCopyBtn(type, element);
-
 ### Description
-
-Copies text in its parent element.
+Adds a button that copies text in its parent element.
 
 ### "type"
-
 Any word you can think of that can describe the text that your button copies.
 
 ### "element"
-
 Use `document.querySelector('.className or #id or element')` example: 
 ``` js
 document.querySelector('element1#id1#id2.className1.className2 element2.className#id')
@@ -48,17 +38,13 @@ That would be read as:
 ```
 
 ## copy(type, text);
-
 ### Description
-
 Copies text to the clipboard
 
 ### "type"
-
-Any word you can think of that can describe the text that is copied.
+Anything you can think of to describe the text being copied
 
 ### "text"
-
 Text to be copied to the clipboard
 
 ## addLink(to, element)
@@ -66,13 +52,20 @@ Text to be copied to the clipboard
 ANY element inside of "to" CANNOT have an "id" tag, use "class"
 
 ### Description
-
 Links one place in the page to another
 
 ### "to"
-
 What element the link leads to; Can be ```document.querySelector('.className or element')```
 
 ### "element"
+What element the link gets added to
 
-What element the link gets added to.
+## addUScript(element, link)
+### Description
+Adds a userscript button
+
+### "element"
+What element to replace
+
+### "link"
+The link to the userscript
