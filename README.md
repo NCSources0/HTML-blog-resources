@@ -12,7 +12,7 @@ Creates a codeblock, add the "fenced" id to make it a fenced codeblock, supports
 ## \<banner img=""> \</banner>
 Creates a banner image for your blog, supports text inputs.
 
-## \<uscript href=""/>
+## \<uscript href="">\</uscript>
 Creates a userscript download button, doesn't support text inputs.
 
 # Advanced Explainations
